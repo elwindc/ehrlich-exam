@@ -1,0 +1,32 @@
+.btn {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-weight: 600;
+    background: transparent;
+    display: inline-block;
+    color: $black;
+
+
+    &.btn-primary {
+        background: $black;
+        color: $white;
+
+        &:hover {
+            background: $gray;
+            color: $white;
+        }
+    }
+
+
+    &.btn-secondary {
+        background: $white;
+        color: $black;
+
+        &:hover {
+            background: $gray;
+            color: $white;
+        }
+    }
+    
+}

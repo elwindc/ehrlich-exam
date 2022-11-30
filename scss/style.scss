@@ -16,8 +16,13 @@
 @import './layout/footer'; // For Footer section
 @import './layout/main'; // For  the body ge.neral structure
 
+// Plugin Import
+@import './plugins/animate';
+@import './plugins/owlcarousel'; // For owlCarousel plugin css
+
 
 // all components
 @import './component/list';
+@import './component/button';
 
 @import './pages/home';

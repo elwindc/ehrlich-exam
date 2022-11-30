@@ -8,7 +8,7 @@ var windowWidth = 0,
 
 const style = document.documentElement.style;
 
-var propelrr = {
+var threaded = {
 	debug: false,
 	browser: '',
 	isMobile: '',
@@ -90,9 +90,9 @@ var propelrr = {
 			}
 		};
 
-		propelrr.isMobile = isMobile.any();
+		threaded.isMobile = isMobile.any();
 
-		if (propelrr.isMobile) {
+		if (threaded.isMobile) {
 			$('html').addClass('bp-touch');
 			$('.desktop-only').remove();
 		} else {
@@ -120,7 +120,7 @@ var propelrr = {
 			os = 'linux';
 		}
 
-		propelrr.os = os;
+		threaded.os = os;
 		$('html').addClass(os);
 	},
 
@@ -141,11 +141,34 @@ var propelrr = {
 						element.removeClass('hiding');
 					}
 				},
-				{ accY: -90 }
+				{ accY: -120 }
 			);
 		} else {
 			$('.hiding').css({ opacity: 1 });
 		}
+	},
+
+	bannerCarousel: function() {
+		$(document).ready(function(){
+			console.log('test');
+			if($('.threaded-carousel.owl-carousel').length > 0){
+				var bannerOption = {
+					items: 1,
+					lazyLoad: true,
+					loop: true,
+					dots: true,
+					nav: true,
+					margin: 0,
+					autoplay: false,
+					mouseDrag: false,
+					touchDrag: true,
+					animateIn: 'fadeIn'
+				}
+		
+				var bannerCarousel = $('.threaded-carousel.owl-carousel');
+				bannerCarousel.owlCarousel(bannerOption);
+			}
+		})
 	},
 
 	coverImage: function(image) {
@@ -211,10 +234,16 @@ var propelrr = {
 	},
 
 	init: function() {
-		propelrr.entranceAnimation();
-		propelrr.coverImage();
-		propelrr.resize();
-		//propelrr.animateFramework();
-		propelrr.loaderBar();
+		threaded.entranceAnimation();
+		threaded.coverImage();
+		threaded.bannerCarousel();
 	}
 };
+
+if(window.jQuery) {
+    threaded.init();
+}
+
+$(document).ready(function(){
+	
+  });
