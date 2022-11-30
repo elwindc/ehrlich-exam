@@ -1,0 +1,79 @@
+.header-hamburger{
+    display:none;
+    position:relative;
+    cursor:pointer;
+    z-index:1004;
+    cursor:pointer;
+    padding:18px 17px;
+    left:0;
+    top:0;
+    -webkit-transition:all .4s cubic-bezier(.645, .045, .355, 1);
+    -moz-transition:all .4s cubic-bezier(.645, .045, .355, 1);
+    -ms-transition:all .4s cubic-bezier(.645, .045, .355, 1);
+    -o-transition:all .4s cubic-bezier(.645, .045, .355, 1);
+    transition:all .4s cubic-bezier(.645, .045, .355, 1);
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+
+
+
+@media (max-width:991px){
+    .header-hamburger{
+        display:block
+    }
+}
+.header-hamburger span,.header-hamburger span:after,.header-hamburger span:before{
+    content:'';
+    cursor:pointer;
+    height:3px;
+    width:25px;
+    background:black;
+    position:absolute;
+    display:block;
+    -webkit-transition:all .2s ease-in-out;
+    -moz-transition:all .2s ease-in-out;
+    -ms-transition:all .2s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out;
+    -webkit-transform:rotate(0);
+    -moz-transform:rotate(0);
+    -ms-transform:rotate(0);
+    -o-transform:rotate(0);
+    transform:rotate(0)
+}
+.header-hamburger span{
+    right:5px;
+    top:16px
+}
+.header-hamburger span:before{
+    top:-8px
+}
+.header-hamburger span:after{
+    top:8px
+}
+.header-hamburger.active{
+    background:0 0
+}
+.header-hamburger.active span{
+    background:0 0!important
+}
+.header-hamburger.active span:after,.header-hamburger.active span:before{
+    top:0;
+    background:black;
+}
+.header-hamburger.active span:before{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg)
+}
+.header-hamburger.active span:after{
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg)
+}

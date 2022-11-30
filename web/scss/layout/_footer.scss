@@ -1,0 +1,146 @@
+// all your related style here in the footer, 
+footer { 
+    position: relative;
+    padding: 40px 0 30px;
+    z-index: 2; 
+    
+ }
+
+.copyright {
+    padding-top: 40px;
+
+    &:after {
+        content:'';
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    p {
+        float: left;
+
+        @include breakpoint(tablet2) {
+            float: none;
+            text-align: center;
+        }
+    }
+
+    .copyright-logo {
+        float: right;
+
+        @include breakpoint(tablet2) {
+            display: none;
+        }
+    }
+}
+
+.footer-left {
+    float: left;
+    width: 40%;
+
+    @include breakpoint(tablet) {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    &:after {
+        content:'';
+        display: block;
+        float: none;
+        clear: both;
+    }
+}
+
+.footer-right {
+    width: 60%;
+    padding-left: 60px;
+    float: left;
+
+    @include breakpoint(tablet) {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    &:after {
+        content:'';
+        display: block;
+        float: none;
+        clear: both;
+    }
+}
+
+.footer-menu-list {
+    width: 33.33%;
+    float: left;
+
+    @include breakpoint(tablet2) {
+        width: 100%;
+        float: none;
+        clear: both;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-right & {
+        float: none;
+        width: 100%;
+    }
+
+    h4 {
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+
+        @include breakpoint(tablet2) {
+            margin-bottom: 10px;
+        }
+    }
+
+    ul {
+
+        li {
+            display: block;
+            padding: 8px 0;
+
+            @include breakpoint(tablet2) {
+                padding: 5px 0;
+            }
+            
+
+            .footer-right & {
+                display: inline-block;
+                padding: 8px 0;
+                margin-right: 10px;
+                font-size: 20px;
+
+                @include breakpoint(tablet2) {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .footer-nav-link {
+        font-size: 0.75rem;
+
+        @include breakpoint(tablet2) {
+            font-size: 12px;
+        }
+    }
+}
+
+.footer-right .footer-menu-list.f-payment-method {
+
+    ul {
+
+        li {
+            margin-right: 5px;
+        }
+    }
+
+    img {
+        max-width: 38px;
+        display: block;
+    }
+}

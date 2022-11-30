@@ -1,0 +1,262 @@
+// include all your related style here in the header, you can leave it empty if the page has no header
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1011;
+    box-shadow: 0px 0px 1px rgba($black, 0.26);
+}
+
+
+.header-wrap {
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    background: $white;
+    height: 71px;
+
+    .flex {
+        @include breakpoint(tablet) {
+            display: block;
+        }
+    }
+}
+
+.logo {
+    width: 192px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+
+    @include breakpoint(tablet) {
+        margin: 0;
+        float: left;
+        margin-top: 5px;
+    }
+
+    img {
+        position: relative;
+        top: 3px;
+        width: 100%;
+        display: block;
+    }
+}
+
+
+.main-menu, .menu-options {
+    width: calc(50% - 120px);
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
+
+    ul {
+
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+.main-menu {
+
+    ul.mobile-menu-options {
+        display: none;
+    }
+
+    @include breakpoint(tablet) {
+        display: block;
+        height: 50vh;
+        position: absolute;
+        padding-top: 71px;
+        background: #fff;
+        width: 100%;
+        left: 0;
+        top: 0;
+        @include transition(all 0.4s cubic-bezier(0.65, 0, 0.35, 1));
+        @include transform(translate(0, -100%));
+        visibility: hidden;
+        pointer-events: none;
+
+        &.active {
+            @include transform(translate(0, 0));
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        ul {
+            border-top: 1px solid #ccc;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+
+            li {
+                display: block;
+                padding: 8px 0;
+            }
+
+            &.mobile-menu-options {
+                display: block;
+
+                li {
+                    display: inline-block;
+                    text-align: center;
+
+                    .menu-nav-option {
+                        font-size: 30px;
+                        padding: 0px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-nav-link {
+    font-size: 0.875rem;
+    padding: 5px 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include breakpoint(desktop) {
+        padding: 5px 10px;
+    }
+
+    @include breakpoint(tablet) {
+        font-size: 1.2rem;
+    }
+
+    &.active {
+        font-weight: 600;
+    }
+}
+
+.menu-nav-option {
+    font-size: 1.25rem;
+    color: $gray;
+    padding: 5px 10px;
+}
+
+.menu-options {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .icon-threaded {
+            position: relative;
+            top: 2.5px;
+        }
+    }
+}
+
+.custom-currency {
+    min-width: 100px;
+    border-radius: 25px;
+    border: 1px solid #f2f2f2;
+    padding: 4px 25px 4px 8px;
+    position: relative;
+
+    &:after {
+        content: "\e900";
+        font-family: 'icon-threaded' !important;
+        speak: never;
+        font-size: 8px;
+        position: absolute;
+        right: 8px;
+        top: 11px;
+    }
+
+    .custom-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background: #fff;
+        padding: 8px;
+
+        li {
+            display: block;
+            padding: 5px 0;
+        }
+    }
+}
+
+.currency-item {
+    text-align: left;
+
+    img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        line-height: 25px;
+        margin-left: 8px;
+    }
+}
+
+.mobile-menu {
+    display: none;
+
+    &:after {
+        content:'';
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    &:before {
+        content:'';
+        display: block;
+        width: 100%;
+        background: #fff;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 88;
+    }
+
+    @include breakpoint(tablet) {
+        display: block;
+    } 
+
+    .mobile-basket {
+        font-size: 30px;
+        float: right;
+        margin-right: 10px;
+        position: relative;
+        top: -2px;
+        z-index: 100;
+
+        .basket-count {
+            width: 18px;
+            height: 18px;
+            background: #C1272D;
+            border-radius: 50%;
+            font-size: 8px;
+            display: block;
+            color: $white;
+            text-align: center;
+            font-weight: 600;
+            line-height: 18px;
+            position: absolute;
+            top: 0;
+            left: -5px;
+        }
+    }
+}

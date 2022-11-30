@@ -1,0 +1,49 @@
+.column-4 {
+    margin: 0px -20px;
+
+    @include breakpoint(tablet) {
+        margin: 0px -10px;
+    }
+
+
+    li {
+        max-width: 25%;
+        width: 100%;
+        padding: 20px;
+
+        @include breakpoint(tablet) {
+            padding: 10px;
+        }
+
+        @include breakpoint(tablet2) {
+            max-width: 50%;
+        }
+    }
+}
+
+
+.column-5 {
+    margin: 0px -20px;
+
+    @include breakpoint(tablet) {
+        margin: 0px -10px;
+    }
+
+    li {
+        max-width: 20%;
+        width: 100%;
+        padding: 20px;
+
+        @include breakpoint(tablet) {
+            padding: 10px;
+        }
+
+        @include breakpoint(tablet2) {
+            max-width: 33.33%;
+        }
+
+        @include breakpoint(mobile) {
+            max-width: 50%;
+        }
+    }
+}
