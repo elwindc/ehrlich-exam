@@ -1,0 +1,178 @@
+// Benefits Section
+.benefits {
+    background: #E5E5E5;
+    padding: 10px 0;
+
+
+}
+
+.benefit-list {
+
+    ul {
+
+        li {
+            padding: 0px 10px;
+        }
+    }
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    .icon-threaded {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+}
+
+
+// Trending Section
+.card-item {
+
+    a {
+        display: flex;
+        flex-flow: column;
+
+        &:hover {
+
+            .img-holder img {
+                @include transform(scale(1.15));
+            }
+        }
+    }
+
+    .img-holder {
+        height: 0;
+        padding-bottom: 133%;
+    }
+
+    h3 {
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+
+    
+
+    &--content {
+        padding: 5px 0 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+        min-height: 88px;
+        justify-content: end;
+        align-items: stretch;
+
+
+        p {
+            font-size: 0.875rem;
+            text-transform: capitalize;
+
+            &:first-child {
+                padding-bottom: 5px;
+            }
+        }
+
+        .price {
+
+            font-weight: 800;
+
+            .discounted {
+                color: #C1272D;
+                margin-right: 20px;
+
+                + span {
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+    }
+}
+
+.img-holder {
+    height: 0;
+    padding-bottom: 133%;
+    position: relative;
+    overflow: hidden;
+    background: $lightgray;
+
+    img {
+        width: 100%;;
+        height: auto;
+        display: block;
+        @include transition(transform 0.4s cubic-bezier(0.65, 0, 0.35, 1));
+        @include transform(scale(1));
+        will-change: transform;
+    }
+}
+
+.trending-hash {
+    padding: 20px 0 0;
+
+    li {
+        padding: 0px 8px 10px;
+    }
+}
+
+.hash-item {
+    border-radius: 50px;
+    border: 1px solid $black;
+    padding: 10px 22px;
+    font-weight: 600;
+    display: block;
+
+}
+
+// New Arrival
+.new-arrival {
+    min-height: 400px;
+    
+}
+
+.new-arrival-content {
+    width: 50%;
+    float: right;
+    color: $white;
+
+    h2 {
+        font-size: 5rem;
+        font-weight: 800;
+        line-height: 5rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        // text-shadow: 1px 2px 1px rgba($black, 0.16);
+    }
+
+    p {
+        font-size: 1.75rem;
+        font-weight: 600;
+        // text-shadow: 1px 2px 1px rgba($black, 0.16);
+    }
+
+    .btn {
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        font-weight: 600;
+        background: $white;
+        margin-top: 53px;
+        display: inline-block;
+        
+    }
+}
+
+// Recent Bought Section
+
+
+// Instagram Section
+
+.instragram-list {
+
+    .img-holder {
+        padding-bottom: 100%;
+    }
+}

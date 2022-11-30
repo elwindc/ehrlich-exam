@@ -1,3 +1,105 @@
-// ionclude all your related style here in the header, you can leave it empty if the page has no header
-html, body { height:100%; min-height:100%; }
+// include all your related style here in the header, you can leave it empty if the page has no header
 header {}
+
+
+.header-wrap {
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    background: $white;
+}
+
+.logo {
+    width: 192px;
+    margin: 0 auto;
+
+    img {
+        position: relative;
+        top: 3px;
+    }
+}
+
+.main-menu, .menu-options {
+    width: calc(50% - 120px);
+
+    ul {
+
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+.menu-nav-link {
+    font-size: 0.875rem;
+    padding: 5px 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &.active {
+        font-weight: 600;
+    }
+}
+
+.menu-nav-option {
+    font-size: 1.25rem;
+    color: $gray;
+    padding: 5px 10px;
+}
+
+.menu-options {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .icon-threaded {
+            position: relative;
+            top: 2.5px;
+        }
+    }
+}
+
+.custom-currency {
+    min-width: 100px;
+    border-radius: 25px;
+    border: 1px solid #f2f2f2;
+    padding: 4px 25px 4px 8px;
+    position: relative;
+
+    &:after {
+        content: "\e900";
+        font-family: 'icon-threaded' !important;
+        speak: never;
+        font-size: 8px;
+        position: absolute;
+        right: 8px;
+        top: 11px;
+    }
+
+    .custom-dropdown-menu {
+        display: none;
+    }
+}
+
+.currency-item {
+    text-align: left;
+
+    img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        line-height: 25px;
+        margin-left: 8px;
+    }
+}

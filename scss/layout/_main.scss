@@ -3,6 +3,12 @@
 html, body { height:100%; min-height:100%; }
 html { font-size: 16px;}
 
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 #main-wrapper { }
 .fl { float:left; }
 .fr { float:right; }
@@ -31,6 +37,42 @@ body {
 	font-weight: 400;
 }
 
+a {
+	text-decoration: none;
+	outline: none;
+    _noFocusLine: expression(this.hideFocus=true);
+    cursor: pointer;
+	color: $black;
+	@include transition(all 0.4s cubic-bezier(0.65, 0, 0.35, 1));
+
+	&:hover {
+		color: rgba($black, 0.7);
+	}
+
+}
+
+.text-center {
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+
+	&.flex-center {
+		align-items: center;
+	}
+
+	&.flex-wrap {
+		flex-wrap: wrap;
+	}
+
+	&.flex-space-between {
+		justify-content: space-between;
+	}
+}
+
 .container-lg {
 	max-width: 1380px;
 	padding: 0px 30px;
@@ -44,4 +86,22 @@ body {
 	padding: 0px 30px;
 	width: 100%;
 	margin: auto;
+}
+
+.section-pad {
+	padding: 50px 0;
+
+	&.bg-gray {
+		background: #F2F2F2;
+	}
+}
+
+
+.section-heading {
+	padding-bottom: 20px;
+    
+	h2 {
+		font-weight: 800;
+		margin-bottom: 20px;
+	}
 }
