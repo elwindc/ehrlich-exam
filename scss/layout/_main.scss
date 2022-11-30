@@ -1,7 +1,13 @@
  // this is area is for reserved class
 #main-container { height:100%; height: auto !important; min-height:100%; }
 html, body { height:100%; min-height:100%; }
-html { font-size: 16px;}
+html { 
+	font-size: 16px;
+
+	@include breakpoint(desktop) {
+		font-size: 14px;
+	}
+}
 
 * {
 	-webkit-box-sizing: border-box;
@@ -9,7 +15,14 @@ html { font-size: 16px;}
 	box-sizing: border-box;
 }
 
-#main-wrapper { }
+#main-wrapper { 
+	padding-top: 71px; 
+
+	@include breakpoint(tablet) {
+		display: flex;
+		flex-direction: column;
+	}
+}
 .fl { float:left; }
 .fr { float:right; }
 .clr { display: block; float:none; clear:both; }
@@ -81,6 +94,11 @@ a {
 	padding: 0px 30px;
 	margin: auto;
 	width: 100%;
+
+	@include breakpoint(desktop) {
+		padding: 0px 20px;
+	}
+	
 	
 }
 
@@ -89,10 +107,18 @@ a {
 	padding: 0px 30px;
 	width: 100%;
 	margin: auto;
+
+	@include breakpoint(desktop) {
+		padding: 0px 20px;
+	}
 }
 
 .section-pad {
 	padding: 50px 0;
+
+	@include breakpoint(desktop) {
+		padding: 30px 0;
+	}
 
 }
 

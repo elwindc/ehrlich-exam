@@ -18,16 +18,30 @@ footer {
 
     p {
         float: left;
+
+        @include breakpoint(tablet2) {
+            float: none;
+            text-align: center;
+        }
     }
 
     .copyright-logo {
         float: right;
+
+        @include breakpoint(tablet2) {
+            display: none;
+        }
     }
 }
 
 .footer-left {
     float: left;
     width: 40%;
+
+    @include breakpoint(tablet) {
+        width: 100%;
+        padding-left: 0;
+    }
 
     &:after {
         content:'';
@@ -42,6 +56,11 @@ footer {
     padding-left: 60px;
     float: left;
 
+    @include breakpoint(tablet) {
+        width: 100%;
+        padding-left: 0;
+    }
+
     &:after {
         content:'';
         display: block;
@@ -54,6 +73,14 @@ footer {
     width: 33.33%;
     float: left;
 
+    @include breakpoint(tablet2) {
+        width: 100%;
+        float: none;
+        clear: both;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
     .footer-right & {
         float: none;
         width: 100%;
@@ -64,6 +91,10 @@ footer {
         font-weight: 600;
         margin-bottom: 15px;
         text-transform: uppercase;
+
+        @include breakpoint(tablet2) {
+            margin-bottom: 10px;
+        }
     }
 
     ul {
@@ -72,6 +103,9 @@ footer {
             display: block;
             padding: 8px 0;
 
+            @include breakpoint(tablet2) {
+                padding: 5px 0;
+            }
             
 
             .footer-right & {
@@ -79,12 +113,20 @@ footer {
                 padding: 8px 0;
                 margin-right: 10px;
                 font-size: 20px;
+
+                @include breakpoint(tablet2) {
+                    font-size: 30px;
+                }
             }
         }
     }
 
     .footer-nav-link {
         font-size: 0.75rem;
+
+        @include breakpoint(tablet2) {
+            font-size: 12px;
+        }
     }
 }
 

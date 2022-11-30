@@ -3,15 +3,32 @@
     background: #E5E5E5;
     padding: 10px 0;
 
+    @include breakpoint(tablet) {
+        order: 1;
+    }
 
 }
 
 .benefit-list {
 
+    .flex {
+        
+    }
+
     ul {
+        @include breakpoint(tablet2) {
+            flex-wrap: wrap;
+            
+        }
 
         li {
             padding: 0px 10px;
+
+            @include breakpoint(tablet2) {
+                width: 50%;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
         }
     }
 }
@@ -29,9 +46,27 @@
 
 
 // Banner
+
+.banner-wrap {
+
+    @include breakpoint(tablet) {
+        order: 0;
+    }
+}
 .threaded-carousel {
     height: calc(100vh - 121px);
     min-height: 560px;
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        padding-bottom: 45%;
+        height: 0;
+        min-height: auto;
+    }
+
+    @include breakpoint(tablet2) {
+        height: calc(100vh - 71px);
+        max-height: 730px;
+    }
 
 
     .item {
@@ -42,6 +77,17 @@
         visibility: hidden;
         z-index: 1;
         @include transition(opacity, 0.4s cubic-bezier(0.65, 0, 0.35, 1));
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+            padding-bottom: 45%;
+            height: 0;
+            min-height: auto;
+        }
+
+        @include breakpoint(tablet2) {
+            height: calc(100vh - 71px);
+            max-height: 730px;
+        }
     }
 
     .owl-item.active {
@@ -71,10 +117,25 @@
         text-align: center;
         padding: 40px 0;
 
+        @include breakpoint(tablet2) {
+            width: 100%;
+            float: none;
+            clear: both;
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+        }
+
         img {
             width: 100%;
             height: auto;
             display: block;
+
+            @include breakpoint(desktop) {
+                max-width: 75%;
+                margin: 0 auto;
+
+            }
         }
 
         .btn {
@@ -82,6 +143,16 @@
             margin-top: 20px;
             padding: 15px 30px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            @include breakpoint(desktop) {
+                font-size: 1.75rem;
+            }
+
+            @include breakpoint(tablet2) {
+                font-size: 1.5rem;
+                padding: 10px 20px;
+            }
+
 
             &:hover {
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
@@ -136,6 +207,10 @@
         top: 50%;
         margin-top: -42px;
 
+        @include breakpoint(tablet2) {
+            display: none;
+        }
+
         &.owl-prev {
             left: 15px;
             opacity: 0.5;
@@ -185,11 +260,38 @@
     background-position: top left;
     background-size: cover;
 
+
+    @include breakpoint(desktop) {
+        background-position: 20% 0;
+        padding: 10px 0;
+        
+    }
+
+    @include breakpoint(tablet2) {
+        padding: 30px 0;
+    }
+
+    .flex {
+        @include breakpoint(tablet2) {
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: 800;
         text-transform: uppercase;
         margin-right: 15px;
+
+        @include breakpoint(tablet2) {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+
+        
     }
 
     p {
@@ -198,6 +300,23 @@
         text-transform: uppercase;
         font-weight: 600;
         margin-right: 140px;
+
+        @include breakpoint(desktop) {
+            margin-right: 20px;
+
+            br {display: none;}
+        }
+
+        @include breakpoint(tablet2) {
+            margin-right: 0;
+            margin-bottom: 15px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .btn {
+        white-space: nowrap;
     }
 
     
@@ -208,6 +327,27 @@
 .site-wide-deal {
     .btn {
         margin-left: 70px;
+
+        @include breakpoint(desktop) {
+            margin-left: 20px;
+        }
+
+        @include breakpoint(tablet) {
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 20px;
+        }
+
+        @include breakpoint(tablet2) {
+            white-space: nowrap;
+        }
+    }
+
+    .flex {
+
+        @include breakpoint(tablet) {
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -215,12 +355,25 @@
     text-align: center;
     padding: 0px 35px;
 
+    @include breakpoint(desktop) {
+        padding: 0px 15px;
+    }
+
+    @include breakpoint(tablet2) {
+        margin-bottom: 15px;
+    }
+
     &--value {
         font-size: 2rem;
         font-weight: 600;
         display: inline-block;
         vertical-align: middle;
         margin-right: 12px;
+
+        @include breakpoint(tablet2) {
+            margin-right: 6px;
+        }
+
     }
 
     &--off {
@@ -259,6 +412,10 @@
         text-align: center;
         text-transform: uppercase;
         padding: 10px 0;
+
+        @include breakpoint(tablet2) {
+            font-size: 1.1rem;
+        }
     }
 
     
@@ -321,6 +478,10 @@
 
     li {
         padding: 0px 8px 10px;
+
+        @include breakpoint(tablet2) {
+            padding: 0px 4px 8px;
+        }
     }
 }
 
@@ -330,6 +491,10 @@
     padding: 10px 22px;
     font-weight: 600;
     display: block;
+
+    @include breakpoint(tablet2) {
+        padding: 5px 15px;
+    }
 
     &:hover {
         background: $black;
@@ -341,9 +506,23 @@
 // New Arrival
 .new-arrival {
     min-height: 400px;
+    
+    @include breakpoint(desktop) {
+        background-position: 60% 0 !important;
+    }
+
+    @include breakpoint(tablet2) {
+        height: auto;
+        min-height: initial;
+    }
+
 
     .btn {
         margin-top: 53px;
+
+        @include breakpoint(tablet) {
+            margin-top: 20px;
+        }
     }
     
 }
@@ -353,6 +532,11 @@
     float: right;
     color: $white;
 
+    @include breakpoint(tablet2) {
+        width: 100%;
+        text-align: center;
+    }
+
     h2 {
         font-size: 5rem;
         font-weight: 800;
@@ -360,11 +544,29 @@
         text-transform: uppercase;
         margin-bottom: 20px;
         // text-shadow: 1px 2px 1px rgba($black, 0.16);
+
+        @include breakpoint(desktop) {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+
+        @include breakpoint(tablet2) {
+            font-size: 3rem;
+            line-height: 3rem;
+        }
     }
 
     p {
         font-size: 1.75rem;
         font-weight: 600;
+
+        @include breakpoint(desktop) {
+            font-size: 1.5rem;
+        }
+
+        @include breakpoint(tablet2) {
+            font-size: 1.3rem;
+        }
         // text-shadow: 1px 2px 1px rgba($black, 0.16);
     }
 
@@ -393,16 +595,41 @@
 .newsletter {
     padding: 20px 0;
 
+    @include breakpoint(tablet2) {
+        padding: 30px 0;
+    }
+
+
+    .flex {
+
+        @include breakpoint(tablet) {
+            flex-wrap: wrap;
+            flex-direction: column;
+
+        }
+    }
+
     h3 {
         text-transform: uppercase;
         font-weight: 800;
         margin-right: 50px;
         font-size: 2rem;
+
+        @include breakpoint(tablet) {
+            margin-right: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     }
 
     .input-wrap {
         position: relative;
         width: 324px;
+
+        @include breakpoint(tablet) {
+            max-width: 320px;
+            
+        }
 
 
         input[type="email"] {
