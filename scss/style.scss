@@ -1,0 +1,19 @@
+// import all scss files here, 
+
+// mostly default imports
+@import './utils/variables'; // all declared variables including font size, color and bg color and font families
+@import './utils/mixins'; // for groups of css that can be reuse like CSS3 for cross browsing
+
+@import './base/fonts'; // for all embedded fonts
+@import './base/reset'; // this includes all normalize or reset css
+@import './base/typography'; // for the paragraphs including header, p, line-height,etc
+
+
+@import './helpers/spacing'; // include predefined padding and margin
+
+// all customized styles
+@import './layout/header'; // For header section
+@import './layout/footer'; // For Footer section
+@import './layout/main'; // For  the body ge.neral structure
+
+@import './pages/home';
